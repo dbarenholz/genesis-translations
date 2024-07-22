@@ -93,7 +93,7 @@ function thememix_genesis_translation_init() {
     $fstlang = WP_CONTENT_DIR.'/plugins/' .str_replace( basename( __FILE__ ), "", plugin_basename( __FILE__ ) );
 
     // Compare Genesis version with what is set as old translation
-    if ( version_compare( $version, $old_translations, '=<' ) ) {
+    if ( version_compare( $version, $old_translations, '<=' ) ) {
 
         define( 'GENESIS_LANGUAGES_DIR', $fstlang . 'genesis-translations/' );
 
@@ -105,7 +105,7 @@ function thememix_genesis_translation_init() {
 
         if ( is_admin() ) {
             require( 'admin-page.php' );
-           
+
         }
 
     }
